@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Menu, X, Target } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const navigate = useNavigate();
 
   return (
     <nav className="relative bg-primary-navy ">
@@ -17,7 +20,12 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-8">
           <ul className="flex gap-8 items-center text-white">
-            <li className="hover:text-gold cursor-pointer">Home</li>
+            <li
+              onClick={() => navigate("/")}
+              className="hover:text-gold cursor-pointer"
+            >
+              Home
+            </li>
             <li className="hover:text-gold cursor-pointer">Services</li>
             <li className="hover:text-gold cursor-pointer">About</li>
           </ul>

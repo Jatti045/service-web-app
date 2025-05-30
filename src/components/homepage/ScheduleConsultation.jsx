@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ScheduleConsultation = () => {
+  const navigate = useNavigate();
   return (
     <section className="bg-primary-navy min-h-[200px] py-24 flex justify-center items-center">
       <div className="container flex justify-center items-center flex-col mx-auto px-6 lg:px-32 text-center">
@@ -12,10 +14,15 @@ const ScheduleConsultation = () => {
           their financial future.
         </p>
         <div className="mt-6 flex justify-center space-x-4">
-          <button className="bg-primary-red text-white px-6 py-2 rounded-md font-medium hover:bg-red-600 transition-colors">
+          <button
+            onClick={() => {
+              navigate("/schedule");
+            }}
+            className="bg-primary-red text-white px-6 py-4 cursor-pointer rounded-md font-medium hover:bg-red-600 transition-colors"
+          >
             Schedule Consultation
           </button>
-          <button className="bg-white text-primary-navy px-6 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors">
+          <button className="bg-white text-primary-navy px-6 py-4 cursor-pointer rounded-md font-medium hover:bg-gray-100 transition-colors">
             Download Brochure
           </button>
         </div>

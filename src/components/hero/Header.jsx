@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const stats = [
@@ -8,6 +9,9 @@ const Header = () => {
     { value: "98%", label: "Client Satisfaction" },
     { value: "12.8%", label: "Average Annual Return" },
   ];
+
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="container grid grid-cols-1 lg:grid-cols-2 place-items-stretch px-4 sm:px-6 md:px-12 xl:px-32 py-12 sm:py-16 gap-12 text-white">
@@ -22,14 +26,16 @@ const Header = () => {
           </p>
 
           <div className="w-full flex flex-col md:flex-row gap-4">
-            <button className="w-full md:w-auto bg-primary-red py-3 px-5 rounded-md flex justify-center items-center gap-2 transition-all delay-10 hover:cursor-pointer hover:opacity-90">
+            <button
+              onClick={() => navigate("/schedule")}
+              className="w-full md:w-auto bg-primary-red py-3 px-5 rounded-md flex justify-center items-center gap-2 transition-all delay-10 hover:cursor-pointer hover:opacity-90"
+            >
               <span>Get Started Today</span>
               <ArrowRight size={16} />
             </button>
             <button className="w-full md:w-auto bg-white text-gold border-gold border-2 py-3 px-5 rounded-md text-center transition-all delay-10 hover:bg-gold hover:text-primary-navy hover:cursor-pointer hover:opacity-90">
               View Performance
             </button>
-
           </div>
         </div>
 

@@ -1,11 +1,24 @@
+import { useRoutes } from "react-router-dom";
 import Homepage from "./pages/Homepage";
+import Schedule from "./pages/Schedule";
 
 function App() {
-  return (
-    <div>
-      <Homepage />
-    </div>
-  );
+  const Router = () => {
+    const elements = useRoutes([
+      {
+        path: "/",
+        element: <Homepage />,
+      },
+      {
+        path: "/schedule",
+        element: <Schedule />,
+      },
+    ]);
+
+    return elements;
+  };
+
+  return <Router />;
 }
 
 export default App;
