@@ -6,10 +6,10 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="relative bg-primary-navy shadow-md">
-      <div className="container mx-auto px-4 sm:px-8 md:px-24 lg:px-32 py-4 flex justify-between items-center">
+    <nav className="relative bg-primary-navy ">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 xl:px-32 py-4 flex justify-between items-center ">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 bg-primary-red rounded-full">
+          <div className="w-10 h-10 bg-primary-red p-1 rounded-full">
             <Target className="w-full h-full text-white" />
           </div>
           <h1 className="text-lg font-bold text-white">Bullseye Advisors</h1>
@@ -17,11 +17,11 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-8">
           <ul className="flex gap-8 items-center text-white">
-            <li className="hover:text-primary-red cursor-pointer">Home</li>
-            <li className="hover:text-primary-red cursor-pointer">Services</li>
-            <li className="hover:text-primary-red cursor-pointer">About</li>
+            <li className="hover:text-gold cursor-pointer">Home</li>
+            <li className="hover:text-gold cursor-pointer">Services</li>
+            <li className="hover:text-gold cursor-pointer">About</li>
           </ul>
-          <button className="bg-primary-red text-white px-4 py-2 rounded-md hover:opacity-90">
+          <button className="bg-primary-red text-white px-4 py-2 rounded-md hover:opacity-90 hover:cursor-pointer">
             Contact Us
           </button>
         </div>
