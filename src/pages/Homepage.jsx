@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import GetInTouch from "../components/homepage/GetInTouch";
 import ScheduleConsultation from "../components/homepage/ScheduleConsultation";
 import OurServices from "../components/homepage/OurServices.jsx";
+import WhyChooseUs from "../components/homepage/WhyChooseUs.jsx";
 
 const Homepage = () => {
   return (
@@ -18,6 +19,9 @@ const Homepage = () => {
         </div>
         <div className={"bg-cold-white"}>
             <OurServices />
+        </div>
+        <div>
+          <WhyChooseUs />
         </div>
           <ScheduleConsultation />
           <GetInTouch />

@@ -1,9 +1,9 @@
-import React from "react";
 import {
     TrendingUp,
     Target,
     Shield
 } from "lucide-react"
+
 const OurServices = () => {
     const services = [
         {
@@ -47,7 +47,7 @@ const OurServices = () => {
                                 </div>
                             </div>
                             <div className={"p-6 pt-0 place-items-center-safe"}> {/* Card content */}
-                                <ul className={"space-y-2 flex flex-col gap-2 items-center"}>
+                                <ul className={"space-y-2 flex flex-col items-center"}>
                                     {service.features.map((feature, featureIndex) => (
                                         <li
                                             key={featureIndex}
