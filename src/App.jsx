@@ -1,7 +1,9 @@
+import Homepage from "./pages/Homepage";
+
 function App() {
   return (
     <div>
-      <h1 className="text-center">Welcome to my service web app</h1>
+      <Homepage />
     </div>
   );
 }
