@@ -61,8 +61,8 @@ export default function Footer() {
 
         <div className="flex flex-col gap-4">
           <h3 className="text-xl font-semibold">Contact Us</h3>
-          <p className="text-sm">123 Finance Ave, Toronto, ON</p>
-          <p className="text-sm">(416) 555-1234</p>
+          <p className="text-sm">123 Bank Street, Ottawa, On</p>
+          <p className="text-sm">(613) 123-4567</p>
           <p className="text-sm">info@bullseyeadvisors.com</p>
           <h3 className="text-xl font-semibold mt-6">Stay Updated</h3>
           <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2 space-y-2 sm:space-y-0">
@@ -89,12 +89,6 @@ export default function Footer() {
               Terms of Service
             </span>
           </div>
-          <button
-            className="mt-4 md:mt-0 hover:text-primary-red transition-colors"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            Back to Top ↑
-          </button>
         </div>
       </div>
     </footer>

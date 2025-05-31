@@ -1,5 +1,5 @@
 import { BarChart3, LineChart, PieChart, Users } from "lucide-react";
-import { cn } from "../../lib/util.js";
+import { cn } from "@/lib/utils.js";
 
 const WhyChooseUs = () => {
   const why = [
@@ -78,7 +78,7 @@ const WhyChooseUs = () => {
             <div
               key={reasonIndex}
               className={cn(
-                "border-0 rounded-lg py-6 h-fit w-full text-center px-20 lg:px-30 flex flex-col justify-center items-center",
+                "border-0 rounded-lg py-10 h-fit w-full text-center px-20 lg:px-30 flex flex-col justify-center items-center",
                 reason.bg
               )}
             >

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+    <!-- Background Circle (red) -->
+    <circle cx="100" cy="100" r="70" fill="#E11D48"/> <!-- Replace with your exact bg-primary-red -->
+
+    <!-- Icon (centered and scaled 5x, simulating padding) -->
+    <g transform="translate(40,40)" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <circle cx="60" cy="60" r="50"/>
+        <circle cx="60" cy="60" r="30"/>
+        <circle cx="60" cy="60" r="10"/>
+    </g>
+</svg>

@@ -33,7 +33,9 @@ const Header = () => {
               <span>Get Started Today</span>
               <ArrowRight size={16} />
             </button>
-            <button className="w-full md:w-auto bg-white text-gold border-gold border-2 py-3 px-5 rounded-md text-center transition-all delay-10 hover:bg-gold hover:text-primary-navy hover:cursor-pointer hover:opacity-90">
+            <button onClick={() => navigate("/performance")}
+              className="w-full md:w-auto bg-white text-gold border-gold border-2 py-3 px-5 rounded-md text-center transition-all delay-10 hover:bg-gold hover:text-primary-navy hover:cursor-pointer hover:opacity-90"
+            >
               View Performance
             </button>
           </div>
