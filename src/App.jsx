@@ -1,7 +1,7 @@
 import { useRoutes } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Schedule from "./pages/Schedule";
-import Performance from "./pages/Performance";
+import Services from "./pages/Services.jsx";
 
 function App() {
   const Router = () => {
@@ -15,8 +15,8 @@ function App() {
         element: <Schedule />,
       },
       {
-        path: "/performance",
-        element: <Performance />,
+        path: "/services",
+        element: <Services />,
       },
       {
         path: "*",

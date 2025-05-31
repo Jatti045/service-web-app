@@ -26,7 +26,12 @@ const Navbar = () => {
             >
               Home
             </li>
-            <li className="hover:text-gold cursor-pointer">Services</li>
+            <li
+                onClick={() => navigate("/services")}
+                className="hover:text-gold cursor-pointer"
+            >
+              Services
+            </li>
             <li className="hover:text-gold cursor-pointer">About</li>
           </ul>
           <button className="bg-primary-red text-white px-4 py-2 rounded-md hover:opacity-90 hover:cursor-pointer">

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import {ArrowRight} from "lucide-react";
 
 const pricingOptions = [
     {
@@ -38,22 +39,22 @@ const pricingOptions = [
 
 export default function PricingSection() {
     return (
-        <section className="container mx-auto py-20 bg-white text-primary-navy">
+        <div className="container mx-auto py-20 ">
             <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-bold">Pricing Plans</h2>
-                <p className="text-base text-xl text-charcoal mt-2">Choose the plan that best fits your investment needs and financial goals.</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gold">Pricing Plans</h2>
+                <p className="text-base text-xl mt-2">Choose the plan that best fits your investment needs and financial goals.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
                 {pricingOptions.map((plan, idx) => (
                     <Card
                         key={idx}
                         className={`flex flex-col justify-between shadow-lg border ${
-                            plan.popular ? "border-primary-red ring-2 ring-primary-red relative" : ""
+                            plan.popular ? "border-gold ring-2 ring-gold relative" : ""
                         }`}
                     >
                         {plan.popular && (
                             <div
-                                className="absolute -top-4 left-0 right-0 mx-auto w-max px-3 py-1 bg-primary-red text-white rounded-full text-sm font-medium"
+                                className="absolute -top-4 left-0 right-0 mx-auto w-max px-3 py-1 bg-gold text-white rounded-full text-sm font-medium"
                             >
                                 Most Popular
                             </div>
@@ -77,12 +78,12 @@ export default function PricingSection() {
                                 className="mt-8 w-full"
                                 variant={plan.popular ? "default" : "outline"}
                             >
-                                {plan.popular ? "Get Started" : "Learn More"}
+                                {plan.popular ? `Chose ${plan.title}` : "Learn More"}
                             </Button>
                         </CardContent>
                     </Card>
                 ))}
             </div>
-        </section>
+        </div>
     );
 }

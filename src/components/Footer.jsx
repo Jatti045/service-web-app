@@ -10,7 +10,11 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <h2 className="text-2xl font-bold">Bullseye Advisors</h2>
           <p className="text-sm">
-            Designed by James Attia & Edward-Joseph Fattouch
+            Designed by
+            <a className={"hover:opacity-90"} target="_blank" href={"https://james-attia.vercel.app/"}> James Attia </a>
+            &
+            <a className={"hover:opacity-90"} target="_blank" href={"https://edward-joseph.vercel.app/"}> Edward-Joseph Fattouch</a>
+            .
           </p>
           <div className="flex space-x-4 mt-2">
             {[
