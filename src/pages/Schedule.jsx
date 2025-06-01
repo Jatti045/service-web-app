@@ -1,5 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import {
   Card,
   CardContent,
@@ -19,6 +27,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const timeSlots = [
   "09:00 ",
@@ -45,6 +54,9 @@ const experienceLevels = [
 ];
 
 export default function Schedule() {
+  const [date, setDate] = useState(new Date());
+  const [selectedTime, setSelectedTime] = useState("10:00");
+
   return (
     <div className="min-h-screen bg-[var(--color-cold-white)]">
       <Navbar />
@@ -73,7 +85,10 @@ export default function Schedule() {
               <CardContent>
                 <Calendar
                   className="mx-auto"
-                  disabled={(date) => date < new Date() || date.getDay() === 0}
+                  selected={date}
+                  mode="single"
+                  onSelect={(date) => setDate(date)}
+                  disabled={(date) => date < new Date()}
                 />
               </CardContent>
             </Card>
@@ -93,7 +108,10 @@ export default function Schedule() {
                   <Button
                     key={time}
                     variant="outline"
-                    className="w-full text-[var(--color-primary-navy)] hover:bg-[var(--color-primary-navy)] hover:text-white"
+                    onClick={() => setSelectedTime(time)}
+                    className={`${
+                      selectedTime === time ? "bg-primary-navy text-white" : ""
+                    } w-full cursor-pointer hover:bg-primary-navy hover:text-white`}
                   >
                     {time}
                   </Button>
@@ -152,49 +170,40 @@ export default function Schedule() {
             {/* User Information */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-[var(--color-primary-navy)]">
+                <CardTitle className="text-primary-navy">
                   Your Information
                 </CardTitle>
-                <CardDescription className="text-[var(--color-charcoal)]">
+                <CardDescription className="text-charcoal">
                   Please provide your contact details and background
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <Label className="text-[var(--color-charcoal)]">
-                      Full Name
-                    </Label>
+                    <Label className="text-charcoal">Full Name</Label>
                     <Input
                       placeholder="Enter your full name"
-                      className="w-full border-[var(--color-charcoal)]"
-                      readOnly
+                      className="w-full border-charcoal"
                     />
                   </div>
                   <div>
-                    <Label className="text-[var(--color-charcoal)]">
-                      Email Address
-                    </Label>
+                    <Label className="text-charcoal">Email Address</Label>
                     <Input
                       placeholder="Enter your email"
-                      className="w-full border-[var(--color-charcoal)]"
-                      readOnly
+                      className="w-full border-charcoal"
                     />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <Label className="text-[var(--color-charcoal)]">
-                      Phone Number
-                    </Label>
+                    <Label className="text-charcoal">Phone Number</Label>
                     <Input
                       placeholder="Enter your phone number"
-                      className="w-full border-[var(--color-charcoal)]"
-                      readOnly
+                      className="w-full border-charcoal"
                     />
                   </div>
                   <div>
-                    <Label className="text-[var(--color-charcoal)]">
+                    <Label className="text-charcoal">
                       Current Portfolio Size
                     </Label>
                     <Select>
@@ -221,41 +230,50 @@ export default function Schedule() {
                   </div>
                 </div>
                 <div>
-                  <Label className="text-[var(--color-charcoal)]">
-                    Investment Goals
-                  </Label>
+                  <Label className="text-charcoal">Investment Goals</Label>
                   <Textarea
                     placeholder="What are your primary investment objectives?"
-                    className="w-full border-[var(--color-charcoal)]"
-                    readOnly
-                    rows={3}
+                    className="w-full border-charcoal"
                   />
                 </div>
                 <div>
-                  <Label className="text-[var(--color-charcoal)]">
+                  <Label className="text-charcoal">
                     Specific Questions or Topics
                   </Label>
                   <Textarea
                     placeholder="Any specific topics you'd like to discuss?"
-                    className="w-full border-[var(--color-charcoal)]"
-                    readOnly
-                    rows={3}
+                    className="w-full border-charcoal"
                   />
                 </div>
               </CardContent>
             </Card>
 
             <div className="flex justify-end">
-              <Button
-                size="lg"
-                className="bg-primary-red w-full text-white hover:bg-primary-navy cursor-pointer"
-              >
-                Confirm Booking
-              </Button>
+              <Dialog>
+                <DialogTrigger className="w-full">
+                  <Button
+                    size="lg"
+                    className="bg-primary-red w-full text-white hover:bg-primary-navy cursor-pointer"
+                  >
+                    Confirm Booking
+                  </Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Booking Confirmed!</DialogTitle>
+                    <DialogDescription>
+                      Your consultation has been successfully booked. We look
+                      forward to speaking with you on{" "}
+                      {date.toLocaleDateString()} at {selectedTime}.
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
             </div>
           </section>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

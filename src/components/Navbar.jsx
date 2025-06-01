@@ -11,7 +11,10 @@ const Navbar = () => {
   return (
     <nav className="relative bg-primary-navy ">
       <div className="container mx-auto px-4 sm:px-6 md:px-12 xl:px-32 py-4 flex justify-between items-center ">
-        <div className="flex items-center gap-2">
+        <div
+          onClick={() => navigate("/")}
+          className="flex cursor-pointer items-center gap-2"
+        >
           <div className="w-10 h-10 bg-primary-red p-1 rounded-full">
             <Target className="w-full h-full text-white" />
           </div>
@@ -27,14 +30,22 @@ const Navbar = () => {
               Home
             </li>
             <li
-                onClick={() => navigate("/services")}
-                className="hover:text-gold cursor-pointer"
+              onClick={() => navigate("/services")}
+              className="hover:text-gold cursor-pointer"
             >
               Services
             </li>
-            <li className="hover:text-gold cursor-pointer">About</li>
+            {/*            <li
+              onClick={() => navigate("/about")}
+              className="hover:text-gold cursor-pointer"
+            >
+              About
+            </li> */}
           </ul>
-          <button className="bg-primary-red text-white px-4 py-2 rounded-md hover:opacity-90 hover:cursor-pointer">
+          <button
+            onClick={() => navigate("/schedule")}
+            className="bg-primary-red text-white px-4 py-2 rounded-md hover:opacity-90 hover:cursor-pointer"
+          >
             Contact Us
           </button>
         </div>

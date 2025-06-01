@@ -11,9 +11,23 @@ export default function Footer() {
           <h2 className="text-2xl font-bold">Bullseye Advisors</h2>
           <p className="text-sm">
             Designed by
-            <a className={"hover:opacity-90"} target="_blank" href={"https://james-attia.vercel.app/"}> James Attia </a>
+            <a
+              className={"hover:opacity-90"}
+              target="_blank"
+              href={"https://james-attia.vercel.app/"}
+            >
+              {" "}
+              James Attia{" "}
+            </a>
             &
-            <a className={"hover:opacity-90"} target="_blank" href={"https://edward-joseph.vercel.app/"}> Edward-Joseph Fattouch</a>
+            <a
+              className={"hover:opacity-90"}
+              target="_blank"
+              href={"https://edward-joseph.vercel.app/"}
+            >
+              {" "}
+              Edward-Joseph Fattouch
+            </a>
             .
           </p>
           <div className="flex space-x-4 mt-2">
@@ -80,7 +94,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gray-800 mt-8 pt-6">
+      <div className="mt-8 pt-6">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6 lg:px-32">
           <p className="text-sm">
             &copy; {currentYear} Bullseye Advisors. All rights reserved.

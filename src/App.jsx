@@ -21,7 +21,7 @@ function App() {
       {
         path: "*",
         element: <Homepage />,
-      }
+      },
     ]);
 
     return elements;
