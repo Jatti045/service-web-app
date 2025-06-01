@@ -78,10 +78,18 @@ const PerformanceTracker = () => {
 
     return (
         <div className="container text-center mb-8 px-4 sm:px-6 md:px-12 xl:px-32 py-12 sm:py-16 text-primary-navy">
+            <div className="text-center mb-8">
+                <h2 className="text-4xl font-bold text-primary-navy mb-4">
+                    We're Just That Good
+                </h2>
+                <p className="text-lg text-charcoal max-w-3xl mx-auto">
+                    Here's how our portfolios compare to the market.
+                </p>
+            </div>
             <Card className={"px-9 py-8 text-center"}>
                 <div>
                     <h1 className="text-3xl font-semibold leading-tight">Market Performance</h1>
-                    <p className="mt-1 text-xl">Growth of a $10 000 investment since 2010</p>
+                    <p className="mt-1 text-lg">Growth of a $10 000 investment since 2010</p>
                 </div>
                 <div ref={containerRef} className={"h-100 w-full bg-white"}></div>
                 <ul className={"flex flex-row place-self-center gap-10 mt-4"}>

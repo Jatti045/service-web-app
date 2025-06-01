@@ -22,8 +22,8 @@ const InvestmentStrategies = ({ className }) => {
                 <h2 className="text-3xl font-bold text-primary-navy mb-4">
                     Investment Strategies
                 </h2>
-                <p className="text-lg text-charcoal max-w-3xl mx-auto">
-                    Explore our different investment approaches based on your risk tolerance and financial goals.
+                <p className="text-lg text-charcoal max-w-4xl mx-auto">
+                    We will help you build different investment approaches based on your risk tolerance and financial goals.
                 </p>
             </div>
 

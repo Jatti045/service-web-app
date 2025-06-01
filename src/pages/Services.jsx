@@ -68,16 +68,16 @@ export default function Services() {
                 <section className="bg-primary-navy flex flex-col items-center justify-center">
                     <Hero/>
                 </section>
-                <section className="bg-white flex flex-col items-center justify-center">
-                    <InvestmentServices services={investmentServices}/>
-                </section>
                 <section className="bg-cold-white flex flex-col items-center justify-center">
-                    <PerformanceTracker/>
+                    <InvestmentServices services={investmentServices}/>
                 </section>
                 <section className="bg-primary-navy text-white flex flex-col items-center justify-center">
                     <PricingSection/>
                 </section>
-                <section className="bg-cold-white py-16 text-center" >
+                <section className="bg-cold-white flex flex-col items-center justify-center">
+                    <PerformanceTracker/>
+                </section>
+                <section className="bg-cold-white pb-16 text-center" >
                     <InvestmentStrategies className={"pb-20 border-b-2 border-charcoal/20"}/>
                     <div className={"pb-10 pt-14"}>
                         <h1 className={"text-lg"}>Still have questions? Our team is ready to help.</h1>

@@ -20,12 +20,10 @@ const Homepage = () => {
         <div className={"bg-cold-white"}>
             <OurServices />
         </div>
-        <div>
-          <WhyChooseUs />
-        </div>
-          <ScheduleConsultation />
-          <GetInTouch />
-          <Footer />
+        <WhyChooseUs />
+        <ScheduleConsultation />
+        <GetInTouch />
+        <Footer />
       </div>
     </>
   );

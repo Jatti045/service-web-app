@@ -1,6 +1,10 @@
 import { TrendingUp, Target, Shield } from "lucide-react";
+import React from "react";
+import {useNavigate} from "react-router-dom";
 
 const OurServices = () => {
+  const navigate = useNavigate();
+
   const services = [
     {
       icon: <TrendingUp className="h-8 w-8" />,
@@ -34,7 +38,7 @@ const OurServices = () => {
   ];
   return (
     <>
-      <div className="container mx-auto sm:px-6 md:px-12 xl:px-32 py-20 text-primary-navy">
+      <div className="container flex flex-col items-center mx-auto sm:px-6 md:px-12 xl:px-32 py-20 text-primary-navy">
         <div className={"text-center mb-16 mx-4"}>
           <h1
             className={
@@ -94,6 +98,12 @@ const OurServices = () => {
             </div>
           ))}
         </div>
+        <button
+            onClick={() => {navigate("/services")}}
+            className="mt-10 bg-primary-navy text-white px-30 py-4 cursor-pointer rounded-md font-medium hover:bg-primary-navy/90 transition-colors"
+        >
+          Explore Our Services
+        </button>
       </div>
     </>
   );
