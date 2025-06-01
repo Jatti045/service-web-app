@@ -12,9 +12,7 @@ const InvestmentServices = ({ services }) => {
                     Explore our range of investment services designed to meet your specific financial goals and risk tolerance.
                 </p>
             </div>
-            <div
-                className={"grid grid-cols-1 md:grid-cols-2 gap-8 text-charcoal mx-4"}
-            >
+            <div className={"grid grid-cols-1 md:grid-cols-2 gap-8 text-charcoal mx-4"}>
                 {services.map((service, index) => (
                     <div
                         key={index}

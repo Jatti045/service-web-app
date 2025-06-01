@@ -17,7 +17,7 @@ import {cn} from "@/lib/utils.js";
 
 const InvestmentStrategies = ({ className }) => {
     return (
-        <div className={cn("max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", className)}>
+        <div className={cn("container mx-auto px-4 sm:px-6 lg:px-8", className)}>
             <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold text-primary-navy mb-4">
                     Investment Strategies
@@ -105,7 +105,7 @@ const InvestmentStrategies = ({ className }) => {
                                             Expected Annual Return
                                         </h4>
                                     </div>
-                                    <p>
+                                    <p className={"place-self-start"}>
                                         4-6% with lower volatility and focus on steady income generation.
                                     </p>
                                 </div>
@@ -185,7 +185,7 @@ const InvestmentStrategies = ({ className }) => {
                                             Expected Annual Return
                                         </h4>
                                     </div>
-                                    <p>
+                                    <p className={"place-self-start"}>
                                         6-9% with moderate volatility and balanced growth and income objectives.
                                     </p>
                                 </div>
@@ -265,7 +265,7 @@ const InvestmentStrategies = ({ className }) => {
                                             Expected Annual Return
                                         </h4>
                                     </div>
-                                    <p>
+                                    <p className={"place-self-start"}>
                                         9-12%+ with higher volatility and focus on long-term capital appreciation.
                                     </p>
                                 </div>
