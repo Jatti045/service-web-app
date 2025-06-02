@@ -62,18 +62,27 @@ const Navbar = () => {
       {isOpen && (
         <div className="absolute w-full left-0 bg-white shadow-lg md:hidden">
           <ul className="flex flex-col gap-4 px-6 py-6 text-gray-800">
-            {["Home", "Services", "About"].map((label) => (
+            {[
+              { name: "Home", path: "/" },
+              { name: "Services", path: "/services" },
+            ].map((route) => (
               <li
-                key={label}
+                key={route.name}
                 className="hover:text-primary-red cursor-pointer"
-                onClick={toggleMenu}
+                onClick={() => {
+                  navigate(route.path);
+                  setIsOpen(false);
+                }}
               >
-                {label}
+                {route.name}
               </li>
             ))}
             <button
               className="bg-primary-red text-white px-4 py-2 rounded-md hover:opacity-90 mt-4"
-              onClick={toggleMenu}
+              onClick={() => {
+                navigate("/schedule");
+                setIsOpen(false);
+              }}
             >
               Contact Us
             </button>
