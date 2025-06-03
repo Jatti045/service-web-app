@@ -56,6 +56,11 @@ const experienceLevels = [
 export default function Schedule() {
   const [date, setDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState("10:00");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [investmentGoals, setInvestmentGoals] = useState("");
+  const [specificQuestions, setSpecificQuestions] = useState("");
 
   return (
     <div className="min-h-screen bg-[var(--color-cold-white)]">
@@ -134,7 +139,7 @@ export default function Schedule() {
                   <Label className="text-[var(--color-charcoal)]">
                     Meeting Type
                   </Label>
-                  <Select>
+                  <Select defaultValue="phone">
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select meeting type" />
                     </SelectTrigger>
@@ -151,7 +156,7 @@ export default function Schedule() {
                   <Label className="text-[var(--color-charcoal)]">
                     Investment Experience
                   </Label>
-                  <Select>
+                  <Select defaultValue="beginner">
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select experience level" />
                     </SelectTrigger>
@@ -184,6 +189,8 @@ export default function Schedule() {
                     <Input
                       placeholder="Enter your full name"
                       className="w-full border-charcoal"
+                      onChange={(e) => setFullName(e.target.value)}
+                      value={fullName}
                     />
                   </div>
                   <div>
@@ -191,6 +198,8 @@ export default function Schedule() {
                     <Input
                       placeholder="Enter your email"
                       className="w-full border-charcoal"
+                      onChange={(e) => setEmail(e.target.value)}
+                      value={email}
                     />
                   </div>
                 </div>
@@ -200,13 +209,15 @@ export default function Schedule() {
                     <Input
                       placeholder="Enter your phone number"
                       className="w-full border-charcoal"
+                      onChange={(e) => setPhone(e.target.value)}
+                      value={phone}
                     />
                   </div>
                   <div>
                     <Label className="text-charcoal">
                       Current Portfolio Size
                     </Label>
-                    <Select>
+                    <Select defaultValue="under-10k">
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select range" />
                       </SelectTrigger>
@@ -234,6 +245,8 @@ export default function Schedule() {
                   <Textarea
                     placeholder="What are your primary investment objectives?"
                     className="w-full border-charcoal"
+                    onChange={(e) => setInvestmentGoals(e.target.value)}
+                    value={investmentGoals}
                   />
                 </div>
                 <div>
@@ -243,6 +256,8 @@ export default function Schedule() {
                   <Textarea
                     placeholder="Any specific topics you'd like to discuss?"
                     className="w-full border-charcoal"
+                    onChange={(e) => setSpecificQuestions(e.target.value)}
+                    value={specificQuestions}
                   />
                 </div>
               </CardContent>
@@ -260,11 +275,33 @@ export default function Schedule() {
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
-                    <DialogTitle>Booking Confirmed!</DialogTitle>
+                    <DialogTitle>
+                      {fullName === "" ||
+                      email === "" ||
+                      phone === "" ||
+                      investmentGoals === "" ||
+                      specificQuestions === "" ? (
+                        <p>Error</p>
+                      ) : (
+                        <p>Booking Confirmation</p>
+                      )}
+                    </DialogTitle>
                     <DialogDescription>
-                      Your consultation has been successfully booked. We look
-                      forward to speaking with you on{" "}
-                      {date.toLocaleDateString()} at {selectedTime}.
+                      {fullName === "" ||
+                      email === "" ||
+                      phone === "" ||
+                      investmentGoals === "" ||
+                      specificQuestions === "" ? (
+                        <p>
+                          Please ensure all fields are filled out before
+                          confirming your booking.
+                        </p>
+                      ) : (
+                        <p>
+                          Your consultation has been successfully booked. We
+                          look forward to speaking with you
+                        </p>
+                      )}
                     </DialogDescription>
                   </DialogHeader>
                 </DialogContent>
