@@ -209,6 +209,7 @@ export default function Schedule() {
                     <Input
                       placeholder="Enter your phone number"
                       className="w-full border-charcoal"
+                      type="tel"
                       onChange={(e) => setPhone(e.target.value)}
                       value={phone}
                     />
@@ -278,7 +279,7 @@ export default function Schedule() {
                     <DialogTitle>
                       {fullName === "" ||
                       email === "" ||
-                      phone === "" ||
+                      /[a-zA-Z]/.test(phone) ||
                       investmentGoals === "" ||
                       specificQuestions === "" ? (
                         <p>Error</p>
@@ -289,12 +290,12 @@ export default function Schedule() {
                     <DialogDescription>
                       {fullName === "" ||
                       email === "" ||
-                      phone === "" ||
+                      /[a-zA-Z]/.test(phone) ||
                       investmentGoals === "" ||
                       specificQuestions === "" ? (
                         <p>
-                          Please ensure all fields are filled out before
-                          confirming your booking.
+                          Please ensure all fields are filled out correctly
+                          before confirming your booking.
                         </p>
                       ) : (
                         <p>
